@@ -1,23 +1,41 @@
-body {
+body 
+{
   background: #57068c;
   color: #fff;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 100%;
-  overflow: hidden; }
-  @media (max-width: 450px) {
-    body {
-      background: #3d0463;
-      overflow: scroll; } }
+  overflow: hidden; 
+}
 
-.nyuLogo {
-  display: block;
-  position: relative;
-  line-height: 0;
-  top: 22px;
-  left: 25px;
-  width: 256px; }
+@media (max-width: 450px) 
+{
+  body 
+  {
+    background: #3d0463;
+    overflow: scroll; 
+  } 
+}
 
-#poly_header.nyuLogo {
-  position: relative;
-  margin-top: 46px;
-  margin-left: 26px; }
+#header {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 980px;
+    height: 124px;
+}
+
+#header #logo {
+    display: block;
+    position: relative;
+    line-height: 0;
+    top: 22px;
+    left: 25px;
+    width: 256px;
+}
+
+#header #poly-header {
+    position: relative;
+    margin-top: 46px;
+    margin-left: 26px;
+}
