@@ -1,0 +1,35 @@
+$nyuPurple: #57068c;
+$nyuDarkPurple: #3d0463;
+$nyuCyan: #0077a2;
+$fontColor: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $nyuPurple;
+  color: $fontColor;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 100%;
+  overflow: hidden;
+  @media(max-width: 450px) {
+    background: $nyuDarkPurple;
+    overflow: scroll;
+  }
+}
+
+.nyuLogo {
+  display: block;
+  position: relative;
+  line-height: 0;
+  top: 22px;
+  left: 25px;
+  width: 256px;
+}
+
+#poly_header.nyuLogo {
+  position: relative;
+  margin-top: 46px;
+  margin-left: 26px;
+}

@@ -1,0 +1,23 @@
+body {
+  background: #57068c;
+  color: #fff;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 100%;
+  overflow: hidden; }
+  @media (max-width: 450px) {
+    body {
+      background: #3d0463;
+      overflow: scroll; } }
+
+.nyuLogo {
+  display: block;
+  position: relative;
+  line-height: 0;
+  top: 22px;
+  left: 25px;
+  width: 256px; }
+
+#poly_header.nyuLogo {
+  position: relative;
+  margin-top: 46px;
+  margin-left: 26px; }
