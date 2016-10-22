@@ -1,25 +1,30 @@
 $nyuPurple: #57068c;
 $nyuDarkPurple: #3d0463;
 $nyuCyan: #0077a2;
-$fontColor: #fff;
-
-* {
-  box-sizing: border-box;
-}
+$nyuGreen: #0e7d8e;
+$white: #fff;
 
 body {
   background: $nyuPurple;
-  color: $fontColor;
+  color: $white;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 100%;
-  overflow: hidden;
   @media(max-width: 450px) {
-    background: $nyuDarkPurple;
+    background: $nyuPurple;
     overflow: scroll;
   }
 }
 
-.nyuLogo {
+#header {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 980px;
+  height: 124px;
+}
+
+#header #logo {
   display: block;
   position: relative;
   line-height: 0;
@@ -28,8 +33,78 @@ body {
   width: 256px;
 }
 
-#poly_header.nyuLogo {
+#header #poly-header {
   position: relative;
   margin-top: 46px;
   margin-left: 26px;
+}
+
+.calendar-container {
+  position: relative;
+  padding-bottom: 75%;
+  left: 25px;
+  overflow: hidden;
+}
+
+.calendar {
+  display: none;
+}
+
+h3,h1 {
+  text-align: center;
+}
+
+iframe {
+  height: 90vh;        /* Viewport-relative units */
+  width: 90vw;
+  margin-top: 2vw;
+  margin-right:5vw;
+  margin-left:5vw;
+}
+
+/* unvisited link */
+a:link {
+    color: $white;
+}
+
+/* visited link */
+a:visited {
+    color: $nyuGreen;
+}
+
+/* mouse over link */
+a:hover {
+    color: $nyuCyan;
+}
+
+/* selected link */
+a:active {
+    color: $nyuDarkPurple;
+}
+
+.btn-grid {
+  width:53vw;
+  margin: auto;
+}
+
+.item {
+  color:#fff;
+  font-size:4vw;
+  text-transform:uppercase;
+  display:inline-block;
+  background-color:$nyuDarkPurple;
+  border:0px;
+  margin:0.5vw;
+  height:9vw;
+  width:25vw;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease; 
+}
+
+.item:hover {
+  background-color:$nyuPurple;
+  box-shadow: 0 1vw 1.5vw rgba(0,0,0,0.3);
+  -webkit-transform: translate3d(-.3vw, -.3vw, 0);
+  transform: translate3d(-.3vw, -.3vw, 0);
+  font-size:3vw;
 }
