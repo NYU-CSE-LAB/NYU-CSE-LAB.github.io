@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>PostgreSQL</title>
+    <link rel="stylesheet" type="text/css" href="assets/common/css/postgres.css" media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/common/js/main.js"></script>
+</head>
+
+<body id="background" class="homepage wide-body">
+    <div id="header">
+        <a href="/" title="NYU Tandon School of Engineering" id="logo">
+            <img src="assets/common/img/NYU_Tandon_logo.png" alt="NYU Tandon School of Engineering" width="257" height="40" />
+        </a>
+        <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
+        <br>
+        <p style="margin-left:25px;">If you aren't logged in to your NYU email address, click <a target="_blank" href="http://email.nyu.edu/">here</a> to log in.</p>
+    </div>
+    <br>
+    <br>
+    <article class="article">
+        <header class="header">
+            <h1 class="headline">
+              Connect to your PostgreSQL Server
+            </h1>
+            <div class="meta">
+                <span class="author">by <span class="author-name">Amit Biswas</span></span>
+                <span class="pub-date">Posted Feb. 13, 2017</span>
+            </div>
+        </header>
+        <p>Given your credentials via email, you can connect to your postgres server hosted on <a target="_blank" href="http://code.engineering.nyu.edu">code.engineering.nyu.edu</a>.</p>
+        <p>
+            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+        </p>
+        <h2>Accessing the Database using a Client</h2>
+        <p>There are several free PostgreSQL clients available of both Mac and Windows. Here is a short list:</p>
+        <ul>
+            <li><a target="_blank" href="https://www.pgadmin.org/download/">pgAdmin 4</a></li>
+            <li><a target="_blank" href="http://valentina-db.com/en/studio/download/current">Valentina Studio</a></li>
+            <li><a target="_blank" href="https://wiki.postgresql.org/wiki/Community_Guide_to_PostgreSQL_GUI_Tools">More Here</a></li>
+        </ul>
+        <p>I will be using pgAdmin 4 to demo how you can use a client to connect to your PostgreSQL database. Download and install the client using the links above. Open it up and you should see something like the following:</p>
+        <figure>
+            <img src="https://nyu.box.com/shared/static/iybtq451u7nzy84g8nd7hmxx2du6qlrq.png" alt="pgAdmin 4 Welcome UI">
+            <figcaption><strong>Figure 1. </strong>pgAdmin 4 start page.</figcaption>
+        </figure>
+        <p>Now add a new server.</p>
+        <figure>
+            <img src="https://nyu.box.com/shared/static/kdbbo76cmrfobkxt1stifppdkexnumcw.png" alt="pgAdmin 4 add server">
+            <figcaption><strong>Figure 2. </strong>pgAdmin 4 add server.</figcaption>
+        </figure>
+        <p>Fill the in details as described below. You should have received the <code>dbname</code> and <code>password</code> in an email.</p>
+        <figure>
+            <img src="https://nyu.box.com/shared/static/4ic9k7zwjvt36qbi8jx8q46n2vim21sr.png" alt="pgAdmin 4 connection name">
+            <figcaption><strong>Figure 3. </strong>pgAdmin 4 server connection.</figcaption>
+        </figure>
+        <p>Make sure <code>port</code> is <code>55432</code>.</p>
+        <figure>
+            <img src="https://nyu.box.com/shared/static/x9grfewjjx2s4zt1yn2kgeavwl9ahvw3.png" alt="pgAdmin 4 connection details">
+            <figcaption><strong>Figure 4. </strong>pgAdmin 4 server connection details.</figcaption>
+        </figure>
+        <p>If successful, pgAdmin 4 will show you the available databases on the server. Double click on the database assigned to you and you should be on your way. Expand schema, and play around with creating new tables and everything else there. See: <a href="https://www.postgresql.org/docs/9.6/static/index.html">PostgreSQL Documentation</a> for more details about the database. </p>
+        <figure>
+            <img src="https://nyu.box.com/shared/static/h9j9qyzmy6dg05ex1smqys0ehroj6xbx.png" alt="pgAdmin 4 database view">
+            <figcaption><strong>Figure 5. </strong>pgAdmin 4 database overview.</figcaption>
+        </figure>
+        <p>You should not be able to see/connect to other databases on the server. If you can, please send an email to cselabs-team@nyu.edu.</p>
+    </article>
+</body>
+
+</html>

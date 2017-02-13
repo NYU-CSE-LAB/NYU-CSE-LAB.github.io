@@ -1,0 +1,182 @@
+$nyuPurple: #57068c;
+$nyuDarkPurple: #3d0463;
+$nyuCyan: #0077a2;
+$nyuGreen: #0e7d8e;
+$nyuGrey: #a4a597;
+$nyuTeal: teal;
+$white: #fff;
+
+/* great default, for your sanity.
+   https://css-tricks.com/box-sizing/  */
+* { box-sizing: border-box; }
+
+.article {
+  max-width: (930px);
+  margin: 0 auto;
+  
+  @media(max-width: 470px) {
+    padding: 60px 30px 90px;
+  }
+}
+
+/* HEADER */
+.category {
+  color: $nyuGrey;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.342em;
+  line-height: 1;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold; /* default */
+  font-size: 2.415em;
+  line-height: 1.2;
+}
+
+.pub-date {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  color: $nyuGrey;
+  text-transform: uppercase;
+  font-size: 74.5%; 
+  font-size: 0.745em; /* 74.5% of parent */
+}
+/* END HEADER */
+
+body {
+  background: $nyuPurple;
+  color: $white;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-size: 100%;
+  @media(max-width: 470px) {
+    background: $nyuPurple;
+    overflow: scroll;
+  }
+}
+
+#header {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 980px;
+  height: 124px;
+}
+
+#header #logo {
+  display: block;
+  position: relative;
+  line-height: 0;
+  top: 22px;
+  left: 25px;
+  width: 256px;
+}
+
+#header #poly-header {
+  position: relative;
+  margin-top: 46px;
+  margin-left: 26px;
+}
+
+/* unvisited link */
+a:link {
+    color: $white;
+}
+
+/* visited link */
+a:visited {
+    color: $nyuGreen;
+}
+
+/* mouse over link */
+a:hover {
+    color: $nyuCyan;
+}
+
+/* selected link */
+a:active {
+    color: $nyuDarkPurple;
+}
+
+
+/* ARTICLE CONTENT */
+p {
+  /* we did most of the work in the body tag! */
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.342rem;
+  line-height: 1;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+/* inline vs inline-block; */
+code {
+  display: inline;
+  /* display: inline-block; */
+  vertical-align: baseline;
+  padding-top: 0px;
+  /* padding-bottom: 300px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $nyuTeal;
+}
+
+/* inline vs inline-block; */
+note {
+  display: inline;
+  /* display: inline-block; */
+  vertical-align: baseline;
+  padding-top: 0px;
+  /* padding-bottom: 300px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $nyuGreen;
+  /* visited link */
+  a:visited {
+    color: $white;
+  }
+}
+
+/* What <display> are images ? */
+/* another great default, for your sanity. */
+img {
+  /* display: block; */
+  max-width: 100%;
+}
+
+sup { 
+  font-family: 'Open Sans', sans-serif;
+}
+
+figure {
+  margin: 2em 0 1em;
+  /* what is a float ? */
+  /*
+  float: right;
+  width: 70%;
+  padding: 0;
+  margin-right: -25%;
+  margin-left: 1em;
+  */
+}
+
+figcaption {
+  font-family: 'Open Sans', sans-serif;
+  color: $nyuGrey;
+
+  line-height: 1.8em;
+  text-align: center;
+  padding: 0.5em 1em;
+}
