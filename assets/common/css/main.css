@@ -3,7 +3,7 @@ body {
   color: #fff;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 100%; }
-  @media (max-width: 450px) {
+  @media (max-width: 470px) {
     body {
       background: #57068c;
       overflow: scroll; } }
