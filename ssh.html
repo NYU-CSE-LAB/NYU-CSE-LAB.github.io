@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>SSH</title>
+    <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/common/js/main.js"></script>
+</head>
+
+<body id="background" class="homepage wide-body">
+    <div id="header">
+        <a href="/" title="NYU Tandon School of Engineering" id="logo">
+            <img src="assets/common/img/NYU_Tandon_logo.png" alt="NYU Tandon School of Engineering" width="257" height="40" />
+        </a>
+        <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
+        <br>
+        <p style="margin-left:25px;">If you aren't logged in to your NYU email address, click <a target="_blank" href="http://email.nyu.edu/">here</a> to log in.</p>
+    </div>
+    <br>
+    <br>
+    <article class="article">
+        <header class="header">
+            <h1 class="headline">
+              <a href="#ssh">SSH</a> and <a href="#file">File transfer</a>
+            </h1>
+            <div class="meta">
+                <span class="author">by <span class="author-name">Amit Biswas</span></span>
+                <span class="pub-date">Posted Feb. 15, 2017</span>
+            </div>
+        </header>
+        <p>Given your credentials via email, you can now create a ssh session to connect to your server at <a target="_blank" href="http://code.engineering.nyu.edu">code.engineering.nyu.edu</a>.</p>
+        <p>
+            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+        </p>
+        <h2 id="ssh">SSH Clients</h2>
+        <p>If you are using macOS, the built in terminal will do, but <a href="https://www.iterm2.com">iTerm</a> is the recommended terminal emulator. If using Windows, you can use <a href="http://www.putty.org">PuTTY</a>, or <a href="http://mobaxterm.mobatek.net">MobaXterm</a>.</p>
+        <p>Open up iTerm, and you should see the terminal window pop up:</p>
+        <figure>
+            <img src="assets/common/img/ssh/iterm_start.png" alt="iTerm window">
+            <figcaption><strong>Figure 1. </strong>iTerm window.</figcaption>
+        </figure>
+        <p>Your username is your <code>netid</code>. Hit enter and when the prompt comes, enter the <code>password</code>. If successful, you will be dropped into a bash shell (More info about bash <a target="_blank" href="http://guide.bash.academy">here</a>). If you are adept, you can do everything straight from this shell. There are useful and powerful text editors avaialable on the server like vim. If you want to use something else not on the server, feel free to email me.</p>
+        <figure>
+            <img src="assets/common/img/ssh/iterm_ls.png" alt="Bash list directory command">
+            <figcaption><strong>Figure 2. </strong>List of files & dirs in your home directory.</figcaption>
+        </figure>
+        <p>In your home directory, you should see a <code>www</code> directory. You can drop, write all your php, html/css code in there. If done properly, the files will be servered by the webserver apache on the following address: <code>netid.code.engineering.nyu.edu</code>. Replace <code>netid</code> with your own. There is already a simple index.html file placed in <code>www</code> directory.</p>
+        <figure>
+            <img src="assets/common/img/ssh/iterm_ls_www.png" alt="list www directory">
+            <figcaption><strong>Figure 3. </strong><code>www</code> directory contents.</figcaption>
+        </figure>
+        <p>You should be able to the following when you go the that url.</p>
+        <figure>
+            <img src="assets/common/img/ssh/project_homepage.png" alt="project webpage">
+            <figcaption><strong>Figure 4. </strong>Project homepage.</figcaption>
+        </figure>
+
+        <h2 id="file">File Transfer</h2>
+        <p></p>
+
+    </article>
+</body>
+
+</html>

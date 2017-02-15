@@ -2,14 +2,63 @@ $nyuPurple: #57068c;
 $nyuDarkPurple: #3d0463;
 $nyuCyan: #0077a2;
 $nyuGreen: #0e7d8e;
+$nyuGrey: #a4a597;
+$nyuTeal: teal;
 $white: #fff;
+
+/* great default, for your sanity.
+   https://css-tricks.com/box-sizing/  */
+* { box-sizing: border-box; }
+
+.article {
+  max-width: (930px);
+  margin: 0 auto;
+  
+  @media(max-width: 470px) {
+    padding: 60px 30px 90px;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+/* HEADER */
+.category {
+  color: $nyuGrey;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.342em;
+  line-height: 1;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold; /* default */
+  font-size: 2.415em;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pub-date {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  color: $nyuGrey;
+  text-transform: uppercase;
+  font-size: 74.5%; 
+  font-size: 0.745em; /* 74.5% of parent */
+}
+/* END HEADER */
 
 body {
   background: $nyuPurple;
   color: $white;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-size: 100%;
-  @media(max-width: 450px) {
+  @media(max-width: 470px) {
     background: $nyuPurple;
     overflow: scroll;
   }
@@ -39,29 +88,6 @@ body {
   margin-left: 26px;
 }
 
-.calendar-container {
-  position: relative;
-  padding-bottom: 75%;
-  left: 25px;
-  overflow: hidden;
-}
-
-.calendar {
-  display: none;
-}
-
-h3,h1 {
-  text-align: center;
-}
-
-iframe {
-  height: 90vh;        /* Viewport-relative units */
-  width: 90vw;
-  margin-top: 2vw;
-  margin-right:5vw;
-  margin-left:5vw;
-}
-
 /* unvisited link */
 a:link {
     color: $white;
@@ -69,42 +95,97 @@ a:link {
 
 /* visited link */
 a:visited {
-    color: $nyuGreen;
+    color: $nyuGrey;
 }
 
 /* mouse over link */
 a:hover {
-    color: $nyuCyan;
+    color: $nyuTeal;
 }
 
 /* selected link */
 a:active {
-    color: $nyuDarkPurple;
+    color: $nyuGrey;
 }
 
-.btn-grid {
-  width:53vw;
-  margin: auto;
+
+/* ARTICLE CONTENT */
+p {
+  /* we did most of the work in the body tag! */
+  margin-bottom: 1em;
 }
 
-.item {
-  color:#fff;
-  font-size:4vw;
-  text-transform:uppercase;
-  display:inline-block;
-  background-color:$nyuDarkPurple;
-  border:0px;
-  margin:0.5vw;
-  height:9vw;
-  width:25vw;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease; 
+h2 {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
-.item:hover {
-  background-color:$nyuPurple;
-  box-shadow: 0 1vw 1.5vw rgba(0,0,0,0.3);
-  -webkit-transform: translate3d(-.3vw, -.3vw, 0);
-  transform: translate3d(-.3vw, -.3vw, 0);
-  font-size:3vw;
+h3 {
+  font-size: 1.342rem;
+  line-height: 1;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
 }
+
+/* inline vs inline-block; */
+code {
+  display: inline;
+  /* display: inline-block; */
+  vertical-align: baseline;
+  padding-top: 0px;
+  /* padding-bottom: 300px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $nyuTeal;
+}
+
+/* inline vs inline-block; */
+note {
+  display: inline;
+  /* display: inline-block; */
+  vertical-align: baseline;
+  padding-top: 0px;
+  /* padding-bottom: 300px; */
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: $nyuGreen;
+  /* visited link */
+  a:visited {
+    color: $white;
+  }
+}
+
+/* What <display> are images ? */
+/* another great default, for your sanity. */
+img {
+  /* display: block; */
+  max-width: 100%;
+}
+
+sup { 
+  font-family: 'Open Sans', sans-serif;
+}
+
+figure {
+  margin: 2em 0 1em;
+  /* what is a float ? */
+  /*
+  float: right;
+  width: 70%;
+  padding: 0;
+  margin-right: -25%;
+  margin-left: 1em;
+  */
+}
+
+figcaption {
+  font-family: 'Open Sans', sans-serif;
+  color: $nyuGrey;
+
+  line-height: 1.8em;
+  text-align: center;
+  padding: 0.5em 1em;
+}
+
