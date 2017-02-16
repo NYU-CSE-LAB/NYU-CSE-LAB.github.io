@@ -127,12 +127,12 @@ figure {
   margin: 2em 0 1em;
   /* what is a float ? */
   /*
-  float: right;
-  width: 70%;
-  padding: 0;
-  margin-right: -25%;
-  margin-left: 1em;
-  */ }
+float: right;
+width: 70%;
+padding: 0;
+margin-right: -25%;
+margin-left: 1em;
+*/ }
 
 figcaption {
   font-family: 'Open Sans', sans-serif;
