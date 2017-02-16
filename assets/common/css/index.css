@@ -138,6 +138,7 @@ figcaption {
   font-family: 'Open Sans', sans-serif;
   color: #a4a597;
   line-height: 1.8em;
+  text-align: center;
   padding: 0.5em 1em; }
 
 .demo-wrapper {
@@ -225,7 +226,6 @@ figcaption {
   bottom: 0;
   width: 100%;
   height: 100%;
-  text-align: center;
   display: table;
   padding: 0 1em;
   transition: all .3s ease; }

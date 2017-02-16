@@ -163,7 +163,9 @@ figure {
 figcaption {
   font-family: 'Open Sans', sans-serif;
   color: $nyuGrey;
+
   line-height: 1.8em;
+  text-align: center;
   padding: 0.5em 1em;
 }
 
@@ -258,7 +260,6 @@ figcaption {
   top:0; left:0; right:0; bottom:0;
   width:100%;
   height:100%;
-  text-align:center;
   display:table;
   padding:0 1em;
   transition: all .3s ease;
