@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Ports</title>
+    <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/common/js/main.js"></script>
+</head>
+
+<body id="background" class="homepage wide-body">
+    <div id="header">
+        <a href="/" title="NYU Tandon School of Engineering" id="logo">
+            <img src="assets/common/img/NYU_Tandon_logo.png" alt="NYU Tandon School of Engineering" width="257" height="40" />
+        </a>
+        <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
+        <br>
+        <p style="margin-left:25px;">If you aren't logged in to your NYU email address, click <a target="_blank" href="http://email.nyu.edu/">here</a> to log in.</p>
+    </div>
+    <br>
+    <br>
+    <article class="article">
+        <header class="header">
+            <h1 class="headline">Which Ports to use?</h1>
+            <div class="meta">
+                <span class="author">by <span class="author-name">Amit Biswas</span></span>
+                <span class="pub-date">Posted Feb. 16, 2017</span>
+            </div>
+        </header>
+        <p>Before you start, make sure you know how to SSH to the server. Learn about that <a href="ssh.html">here</a>.</p>
+        <p>
+            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+        </p>
+        <p>If you want to run an app on the server, it is useful sometimes to bind your application to a port. On <a href="http://code.engineering.nyu.edu">Code</a>, the ports <code>8080-10000/tcp</code> are open through the firewall.</p>
+        <p>There is a chance that someone might be using one of those ports. An easy way to check for available ports is to run this command: <code>netstat -lant</code>. The options <code>lant</code> for <code>netstat</code> refer to <note>[--listening|-l], [--all|-a], [--numeric|-n], and [--tcp|-t]</note> respectively. You should see all the <code>tcp</code> ports that are currently in use by other applications.</p>
+        <figure>
+            <img src="assets/common/img/ports/netstat.png" alt="netstat command">
+            <figcaption>Figure 1. <strong>Netstat command.</figcaption>
+        </figure>
+        <p>In <note>Figure 1</note>, you can see that none of the ports <code>8080-10000</code> show up in the output of netstat. Soin this instance, any port in that range is safe to use.</p>
+    </article>
+</body>
+
+</html>
