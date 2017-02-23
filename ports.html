@@ -31,7 +31,7 @@
         <p>If you want to run an app on the server, it is useful sometimes to bind your application to a port. On <a href="http://code.engineering.nyu.edu">Code</a>, the ports <code>8080-10000/tcp</code> are open through the firewall.</p>
         <p>There is a chance that someone might be using one of those ports. An easy way to check for available ports is to run this command: <code>netstat -lant</code>. The options <code>lant</code> for <code>netstat</code> refer to <note>[--listening|-l], [--all|-a], [--numeric|-n], and [--tcp|-t]</note> respectively. You should see all the <code>tcp</code> ports that are currently in use by other applications.</p>
         <figure>
-            <img src="assets/common/img/ports/netstat.png" alt="netstat command">
+            <img src="assets/common/img/ports/ports.png" alt="netstat command">
             <figcaption><strong>Figure 1. </strong>Netstat command.</figcaption>
         </figure>
         <p>In <note>Figure 1</note>, you can see that none of the ports <code>8080-10000</code> show up in the output of netstat. Soin this instance, any port in that range is safe to use.</p>
