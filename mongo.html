@@ -5,6 +5,7 @@
     <title>MongoDB</title>
     <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
 </head>
+
 <body id="background" class="homepage wide-body">
     <div id="header">
         <a href="/" title="NYU Tandon School of Engineering" id="logo">
@@ -29,11 +30,39 @@
         <p>First <a href="ssh.html">SSH</a> to code.engineering.nyu.edu</p>
         <p>Once logged in type in the following command:</p>
         <code>mongo dbname -u dbuser -p</code>
-        <p><code>dbname</code> and <code>dbuser</code> is given to you. It is usually the netid of the team leader. When asked for credentials, simply type in the one given to you.</p>
-
+        <p><code>dbname</code> and <code>dbuser</code> is given to you. It is usually the netid of the team leader. When prompted for password, simply type in the one given to you.</p>
         <h2>Using a Client</h2>
         <p>I will be using <a href="https://robomongo.org/download">Robomongo</a> to demonstrate how to setup a client.</p>
-        <p></p>
+        <p>When you first launch the client, you will be greeted with an empty list of servers.</p>
+        <figure>
+            <img src="assets/common/img/mongo/start.png" alt="netstat command">
+            <figcaption><strong>Figure 1. </strong>Robomongo Start Screen.</figcaption>
+        </figure>
+        <p>Click on <note>Create</note>. Then fill in the following details:</p>
+        <figure>
+            <img src="assets/common/img/mongo/conn1.png" alt="netstat command">
+            <figcaption><strong>Figure 2. </strong>Robomongo Connection Name.</figcaption>
+        </figure>
+        <p>Make sure <note>Perform authentication</note> is checked. Fill in the details as shown below. <code>dbname</code>, <code>dbuser</code>, and <code>password</code> is sent via email.</p>
+        <figure>
+            <img src="assets/common/img/mongo/authentication.png" alt="netstat command">
+            <figcaption><strong>Figure 3. </strong>Robomongo Connection Authentication.</figcaption>
+        </figure>
+        <p>Click on <note>Test</note> and you should see the following dialog box pop up.</p>
+        <figure>
+            <img src="assets/common/img/mongo/test.png" alt="netstat command">
+            <figcaption><strong>Figure 4. </strong>Robomongo Test Connection.</figcaption>
+        </figure>
+        <p>Now you will see the server that was just configured.</p>
+        <figure>
+            <img src="assets/common/img/mongo/conn2.png" alt="netstat command">
+            <figcaption><strong>Figure 5. </strong>Robomongo Connection List.</figcaption>
+        </figure>
+        <p>Hit <note>Connect</note> and you should see what is in your database.</p>
+        <figure>
+            <img src="assets/common/img/mongo/conn_success.png" alt="netstat command">
+            <figcaption><strong>Figure 6. </strong>Robomongo Database View Connected.</figcaption>
+        </figure>
     </article>
 </body>
 
