@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Install Node.js and Setup Express</title>
+    <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
+</head>
+
+<body id="background" class="homepage wide-body">
+    <div id="header">
+        <a href="/" title="NYU Tandon School of Engineering" id="logo">
+            <img src="assets/common/img/NYU_Tandon_logo.png" alt="NYU Tandon School of Engineering" width="257" height="40" />
+        </a>
+        <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
+        <br>
+    </div>
+    <br>
+    <br>
+    <article class="article">
+        <header class="header">
+            <h1 class="headline">Which Ports to use?</h1>
+            <div class="meta">
+                <span class="author">by <span class="author-name">Amit Biswas</span></span>
+                <span class="pub-date">Posted Feb. 16, 2017</span>
+            </div>
+        </header>
+        <p>Before you start, make sure you know how to SSH to the server. Learn about that <a href="ssh.html">here</a>.</p>
+        <p>
+            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+        </p>
+        <h2>Install Node.js</h2>
+        <p>
+            Node.js is JavaScript based runtime for building server-side and networking applications. We will go over how to compile and install Node.js on your local account on Code. Essentially, you will be able to use <code>npm</code> and install packages as needed without requiring sudo access.
+        </p>
+        <p>
+        First modify your local <code>PATH</code> environment variable.
+        </p>
+        <code>echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc</code>
+        <p>We are prepending a directory into the system path, so it will check this local directory inside your home folder first, before looking at system folders to find and run applications. For example, if both the server and you on your local account on the server had Node.js already installed, this modification of the <code>PATH</code> variable would force the use of your Node.js binary instead of the Node.js installed in the system.</p>
+        <code>source ~/.bashrc</code>
+        <p><code>source</code> just runs the content of the file passed in as arguement. This command is analogous to <code>. ~/.bashrc</code>.</p>
+        <p>Make two directories: one for the compiled binary of Node.js and npm, and the other for storing the installer files for Node.js.</p>
+        <code>mkdir ~/local ~/node-latest-install</code>
+        <p>Change directory to ~/node-latest-install</p>
+        <code>cd ~/node-latest-install</code>
+        <p>Download and extract the latest tar file of Node.js installer and extract the contents in the current directory.</p>
+        <code>curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1</code>
+        <p>Set the directory where Node.js binary will be installed at.</p>
+        <code>./configure --prefix=~/local</code>
+        <p>Install Node.js. This will take a while. Go get a latté. You deserve it. Run the command before you get the latté. Don't close your laptop though. If the ssh connection is lost, <code>make install</code> process will be killed, and you will have go on another latté trip.</p>
+        <code>make install</code>
+        <p>Determine the verity of your Node.js install.</p>
+        <code>curl https://www.npmjs.org/install.sh | sh</code>
+        <h2>Setup Express and "Hello World" App</h2>
+        <p>Follow the official documentations below and you should be on your way to building the next best thing!</p>
+        <ul>
+            <li><a target="_blank" href="http://expressjs.com/en/starter/installing.html">Installing Express</a></li>
+            <li><a target="_blank" href="http://expressjs.com/en/starter/hello-world.html">Valentina Studio</a></li>
+        </ul>
+        <p></p>
+    </article>
+</body>
+
+</html>
