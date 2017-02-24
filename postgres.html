@@ -14,8 +14,6 @@
         <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
         <br>
     </div>
-    <br>
-    <br>
     <article class="article">
         <header class="header">
             <h1 class="headline">
@@ -30,6 +28,13 @@
         <p>
             <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
         </p>
+        <h2>Accessing the Database locally using terminal</h2>
+        <p>First <a href="ssh.html">SSH</a> to code.engineering.nyu.edu</p>
+        <p>Once logged in type in the following command:</p>
+        <code>psql -p 55432 -U dbuser -d dbname</code>
+        <p>Change <code>dbuser</code> and <code>dbname</code> accordingly. You will be prompted for password to connect as well.</p>
+        <p>Once connected you will be dropped into psql shell. See some of the things you can do to manipulate your database here: <a href="http://postgresguide.com/utilities/psql.html">psql guide</a>.</p>
+
         <h2>Accessing the Database using a Client</h2>
         <p>There are several free PostgreSQL clients available of both Mac and Windows. Here is a short list:</p>
         <ul>
