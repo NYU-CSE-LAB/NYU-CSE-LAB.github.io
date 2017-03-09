@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Ports</title>
+    <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
+</head>
+
+<body id="background" class="homepage wide-body">
+    <div id="header">
+        <a href="/" title="NYU Tandon School of Engineering" id="logo">
+            <img src="assets/common/img/NYU_Tandon_logo.png" alt="NYU Tandon School of Engineering" width="257" height="40" />
+        </a>
+        <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
+        <br>
+    </div>
+    <article class="article">
+        <header class="header">
+            <h1 class="headline">How to compile Linux Binary on your local account?</h1>
+            <div class="meta">
+                <span class="author">by <span class="author-name">Amit Biswas</span></span>
+                <span class="pub-date">Posted Feb. 16, 2017</span>
+            </div>
+        </header>
+        <p>Before you start, make sure you know how to SSH to the server. Learn about that <a href="ssh.html">here</a>.</p>
+        <p>
+            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+        </p>
+        <p> There are instances where you require sudo access to install different packages on your lcoal machine. There's a way to install those packages without sudo access. We install those packages on our local machine and modify the path in our home directory. This way the shell would look up in installed binary directory before it checks the system directories.
+         </p>
+         Here's an example which explains it better.
+
+         <ol>
+             <li>
+        downloaded the cmake 3.8.0 binary from : <a href="https://cmake.org/files/v3.8/cmake-3.8.0-rc2-Linux-x86_64.sh"></a>
+        <code>wget https://cmake.org/files/v3.8/cmake-3.8.0-rc2-Linux-x86_64.sh
+</code></li>
+         
+          
+
+
+  <li>
+     Then add execute permission :
+
+<code>
+    chmod +x cmake-3.8.0-rc2-Linux-x86_64.sh 
+</code> 
+</li>    
+
+
+ 
+<li>
+Now run it with the command :
+
+<code>
+  bash cmake-3.8.0-rc2-Linux-x86_64.sh   
+</code>
+
+   
+
+</li>
+
+<li>
+It will give you the license agreement, hit space bar to scroll down, then accept the license by entering y.
+
+When you accept, it will tell you the installation directory.    
+
+</li>
+    
+
+</p>
+
+<p>
+    In my case it shows the following:
+
+By default the CMake will be installed in:
+  "/home/abiswas/cmake-3.8.0-rc2-Linux-x86_64"
+Do you want to include the subdirectory cmake-3.8.0-rc2-Linux-x86_64?
+Saying no will install in: "/home/abiswas" [Yn]:
+</p>
+
+<p>
+ Enter 'Y' and it will start extracting.   
+
+</p>
+
+<p>
+    
+ There should be a new directory now, in your home directory.
+Simply run the cmake from there:   
+</p>
+<p>
+    
+
+If you are in your home directory run the following:<code>
+./cmake-3.8.0-rc2-Linux-x86_64/bin/cmake --version     
+</code>
+          #./ refers to the current directory
+</p>
+
+<p>
+   By default, you bash shell will use the cmake installed in the system. See below:
+[abiswas@code ~]$ cmake --version
+cmake version 2.8.12.2 
+
+<li>
+Execute : <code>
+ls -la      
+</code>    
+</li>
+
+<li>
+Exacute : <code>
+    vim .bashrc or nano .bashrc  (not .bash_rc) 
+</code>   
+</li>
+
+<li>
+Exacute : <code>
+ vim .bashrc or nano .bashrc  (not .bash_rc)    
+</code>   
+</li>
+
+<li>
+Append following line in .bashrc file : <code>
+export PATH=$HOME/cmake-3.8.0-rc2-Linux-x86_64/bin:$PATH        
+</code> 
+</li>
+
+
+</p>
+<p>
+    I am basically telling the shell to look inside my cmake directory before looking at system directories to find cmake.
+</p>
+
+<li>
+Now source the file (let the shell update its environment) : <code>
+ source .bashrc     
+</code>  
+</li> 
+
+<li>
+To test our changes execute : <code>
+cmake --version or which cmake    
+</code>   
+</li>
+     
+</p>
+
+<p>
+    Now it is using the cmake I installed in my home directory. 
+
+
+</p>
+<p>
+    Hope this makes everything clear. You can install almost every linux binary package this way. 
+</p>
+
+</ol>
+   
+         
+    </article>
+</body>
+
+</html>
