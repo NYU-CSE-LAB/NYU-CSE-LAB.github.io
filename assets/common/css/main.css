@@ -105,6 +105,32 @@ h3 {
   margin-top: 1.8em;
   margin-bottom: 0.5em; }
 
+label {
+  display: block;
+  margin: 20px 0 0; }
+
+label:hover {
+  text-decoration: underline; }
+
+input {
+  position: absolute;
+  left: -999em; }
+
+.hide {
+  max-height: 99em;
+  opacity: 1;
+  height: auto;
+  overflow: hidden;
+  transition: opacity 0.5s linear, max-height 0.5s linear; }
+
+.hide p {
+  padding: 10px;
+  margin: 0; }
+
+input[type=checkbox]:checked + div {
+  opacity: 0;
+  max-height: 0; }
+
 /* inline vs inline-block; */
 code {
   display: inline;
@@ -130,8 +156,6 @@ note {
   note a:visited {
     color: #fff; }
 
-/* What <display> are images ? */
-/* another great default, for your sanity. */
 img {
   /* display: block; */
   max-width: 100%; }
@@ -140,15 +164,7 @@ sup {
   font-family: 'Open Sans', sans-serif; }
 
 figure {
-  margin: 2em 0 1em;
-  /* what is a float ? */
-  /*
-  float: right;
-  width: 70%;
-  padding: 0;
-  margin-right: -25%;
-  margin-left: 1em;
-  */ }
+  margin: 2em 0 1em; }
 
 figcaption {
   font-family: 'Open Sans', sans-serif;

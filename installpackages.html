@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-    <title>Ports</title>
+    <title>Install Packages w/o Sudo!</title>
     <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
 </head>
 
@@ -16,149 +16,121 @@
     </div>
     <article class="article">
         <header class="header">
-            <h1 class="headline">How to compile Linux Binary on your local account?</h1>
+            <h1 class="headline">Installing Linux Binaries on Your Local Account</h1>
             <div class="meta">
                 <span class="author">by <span class="author-name">Amit Biswas</span></span>
-                <span class="pub-date">Posted Feb. 16, 2017</span>
+                <span class="pub-date">Posted Mar. 10, 2017</span>
             </div>
         </header>
         <p>Before you start, make sure you know how to SSH to the server. Learn about that <a href="ssh.html">here</a>.</p>
+        <div>
+            <label for="disclaimer">VPN Disclaimer</label>
+            <input type="checkbox" checked="true" name="one" id="disclaimer">
+            <div class="hide">
+                <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+            </div>
+        </div>
         <p>
-            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+            There are instances where you require sudo access to install different packages on the server. Instead of waiting for the administrator to install the package, you can actually install on your local account without any intervention.
         </p>
-        <p> There are instances where you require sudo access to install different packages on your lcoal machine. There's a way to install those packages without sudo access. We install those packages on our local machine and modify the path in our home directory. This way the shell would look up in installed binary directory before it checks the system directories.
-         </p>
-         Here's an example which explains it better.
-
-         <ol>
-             <li>
-        downloaded the cmake 3.8.0 binary from : <a href="https://cmake.org/files/v3.8/cmake-3.8.0-rc2-Linux-x86_64.sh"></a>
-        <code>wget https://cmake.org/files/v3.8/cmake-3.8.0-rc2-Linux-x86_64.sh
-</code></li>
-         
-          
-
-
-  <li>
-     Then add execute permission :
-
-<code>
-    chmod +x cmake-3.8.0-rc2-Linux-x86_64.sh 
-</code> 
-</li>    
-
-
- 
-<li>
-Now run it with the command :
-
-<code>
-  bash cmake-3.8.0-rc2-Linux-x86_64.sh   
-</code>
-
-   
-
-</li>
-
-<li>
-It will give you the license agreement, hit space bar to scroll down, then accept the license by entering y.
-
-When you accept, it will tell you the installation directory.    
-
-</li>
-    
-
-</p>
-
-<p>
-    In my case it shows the following:
-
-By default the CMake will be installed in:
-  "/home/abiswas/cmake-3.8.0-rc2-Linux-x86_64"
-Do you want to include the subdirectory cmake-3.8.0-rc2-Linux-x86_64?
-Saying no will install in: "/home/abiswas" [Yn]:
-</p>
-
-<p>
- Enter 'Y' and it will start extracting.   
-
-</p>
-
-<p>
-    
- There should be a new directory now, in your home directory.
-Simply run the cmake from there:   
-</p>
-<p>
-    
-
-If you are in your home directory run the following:<code>
-./cmake-3.8.0-rc2-Linux-x86_64/bin/cmake --version     
-</code>
-          #./ refers to the current directory
-</p>
-
-<p>
-   By default, you bash shell will use the cmake installed in the system. See below:
-[abiswas@code ~]$ cmake --version
-cmake version 2.8.12.2 
-
-<li>
-Execute : <code>
-ls -la      
-</code>    
-</li>
-
-<li>
-Exacute : <code>
-    vim .bashrc or nano .bashrc  (not .bash_rc) 
-</code>   
-</li>
-
-<li>
-Exacute : <code>
- vim .bashrc or nano .bashrc  (not .bash_rc)    
-</code>   
-</li>
-
-<li>
-Append following line in .bashrc file : <code>
-export PATH=$HOME/cmake-3.8.0-rc2-Linux-x86_64/bin:$PATH        
-</code> 
-</li>
-
-
-</p>
-<p>
-    I am basically telling the shell to look inside my cmake directory before looking at system directories to find cmake.
-</p>
-
-<li>
-Now source the file (let the shell update its environment) : <code>
- source .bashrc     
-</code>  
-</li> 
-
-<li>
-To test our changes execute : <code>
-cmake --version or which cmake    
-</code>   
-</li>
-     
-</p>
-
-<p>
-    Now it is using the cmake I installed in my home directory. 
-
-
-</p>
-<p>
-    Hope this makes everything clear. You can install almost every linux binary package this way. 
-</p>
-
-</ol>
-   
-         
+        <h2>CMake</h2>
+        <p>In this tutorial, I will install a CMake locally on my account without using sudo. We will do this by installing or copying the linux binary to my home directory. Then, I will modify the <code>PATH</code> variable so that my shell will use this version of the application instead of some other version installed in the system.</p>
+        <ul>
+            <li>
+                <p>
+                    First download the version of CMake (or any other linux binary) you need. I am downloading <a href="https://cmake.org/files/v3.8/cmake-3.8.0-rc2-Linux-x86_64.sh">CMake 3.8</a>.
+                </p>
+                <p><code>wget https://cmake.org/files/v3.8/cmake-3.8.0-rc2-Linux-x86_64.sh</code></p>
+            </li>
+            <li>
+                <p>
+                    In CMake's case, their installer is a bash script. Before I do anything else, I need to add execute permission to this script.
+                </p>
+                <p>
+                    <code>chmod +x cmake-3.8.0-rc2-Linux-x86_64.sh</code>
+                </p>
+            </li>
+            <li>
+                <p>Now run it.</p>
+                <p>
+                    <code>bash cmake-3.8.0-rc2-Linux-x86_64.sh</code>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Once the license agreement is displayed, hit space bar to scroll down, then accept the license by entering <b>y</b>. When you accept, it will tell state which directory it will be installed at.
+                </p>
+                <p>
+                    In my case it shows the following:
+                </p>
+                <code>By default the CMake will be installed in: "/home/abiswas/cmake-3.8.0-rc2-Linux-x86_64" Do you want to include the subdirectory cmake-3.8.0-rc2-Linux-x86_64? Saying no will install in: "/home/abiswas" [Yn]:</code>
+                <p>
+                    Enter 'Y' and it will start extracting.
+                </p>
+            </li>
+            <li>
+                <p>
+                    There should be a new directory now in your home. Now run the following:
+                </p>
+                <code>~/cmake-3.8.0-rc2-Linux-x86_64/bin/cmake --version     #~/ refers to your home directory </code>
+                <p>
+                    By default, you bash shell will use the version of CMake installed systemwide on the server. You can verify that with the following two commands:
+                </p>
+                <figure>
+                    <img src="assets/common/img/linux_packages/cmake_version.png" alt="CMake version and location">
+                    <figcaption><strong>Figure 1. </strong>CMake location and version.</figcaption>
+                </figure>
+                <p>
+                    By default, your shell calls the CMake application located in the system directory.
+                </p>
+                <p>
+                    Now we will modify the <code>PATH</code> environment variable so that the shell uses the CMake we just installed.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Verify that there is a <code>.bashrc</code> file in your home directory:
+                </p>
+                <code>
+                  ls -la ~
+                </code>
+                <figure>
+                    <img src="assets/common/img/linux_packages/HomeDirList.png" alt="Home Directory Listing">
+                    <figcaption><strong>Figure 2. </strong>Listing Home Directories.</figcaption>
+                </figure>
+            </li>
+            <li>
+                <p>
+                    Edit the .bashrc file with your favorite editor and append the following line:
+                </p>
+                <code>
+                    export PATH=$HOME/cmake-3.8.0-rc2-Linux-x86_64/bin:$PATH
+                </code>
+            </li>
+            <p>
+                This modifies that <code>PATH</code> so that the shell will look inside the CMake installation directory before looking at system directories to find CMake.
+            </p>
+            <li>
+                <p>
+                    Now source the file (let the shell update its environment variables):
+                </p>
+                <code>
+                source ~/.bashrc     
+                </code>
+            </li>
+            <li>
+            <p>
+              To test our changes execute the following:
+            </p>
+              <figure>
+                    <img src="assets/common/img/linux_packages/cmake_new.png" alt="Home Directory Listing">
+                    <figcaption><strong>Figure 3. </strong>Newly installed CMake location and version.</figcaption>
+              </figure>
+            </li>
+            <p>
+                Now it is using the CMake I installed in my home directory. Hope this makes everything clear. You can install almost every linux binary package this way.
+            </p>
+        </ul>
     </article>
 </body>
 

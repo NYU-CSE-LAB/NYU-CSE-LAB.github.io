@@ -23,9 +23,13 @@
             </div>
         </header>
         <p>Before you start, make sure you know how to SSH to the server. Learn about that <a href="ssh.html">here</a>.</p>
-        <p>
-            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
-        </p>
+        <div>
+            <label for="disclaimer">VPN Disclaimer</label>
+            <input type="checkbox" checked="true" name="one" id="disclaimer">
+            <div class="hide">
+                <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+            </div>
+        </div>
         <h2>Install Node.js</h2>
         <p>
             Node.js is JavaScript based runtime for building server-side and networking applications. We will go over how to compile and install Node.js on your local account on Code. Essentially, you will be able to use <code>npm</code> and install packages as needed without requiring sudo access.

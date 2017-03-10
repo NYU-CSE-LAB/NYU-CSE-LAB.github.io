@@ -27,9 +27,13 @@
             </div>
         </header>
         <p>Given your credentials via email, you can now create a ssh session to connect to your server at <a target="_blank" href="http://code.engineering.nyu.edu">code.engineering.nyu.edu</a>.</p>
-        <p>
-            <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
-        </p>
+        <div>
+            <label for="disclaimer">VPN Disclaimer</label>
+            <input type="checkbox" checked="true" name="one" id="disclaimer">
+            <div class="hide">
+                <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+            </div>
+        </div>
         <h2 id="ssh">SSH Clients</h2>
         <p>If you are using macOS, the built in terminal will do, but <a href="https://www.iterm2.com">iTerm</a> is the recommended terminal emulator. If using Windows, you can use <a href="http://www.putty.org">PuTTY</a>, or <a href="http://mobaxterm.mobatek.net">MobaXterm</a>.</p>
         <p>Open up iTerm, and you should see the terminal window pop up:</p>
