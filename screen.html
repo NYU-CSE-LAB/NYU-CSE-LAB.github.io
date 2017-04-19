@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Screen</title>
+    <link rel="stylesheet" type="text/css" href="assets/common/css/main.css" media="screen" />
+</head>
+
+<body id="background" class="homepage wide-body">
+    <div id="header">
+        <a href="/" title="NYU Tandon School of Engineering" id="logo">
+            <img src="assets/common/img/NYU_Tandon_logo.png" alt="NYU Tandon School of Engineering" width="257" height="40" />
+        </a>
+        <img src="assets/common/img/poly_header.png" id="poly-header" width="254px" height="12px" />
+        <br>
+    </div>
+    <article class="article">
+        <header class="header">
+            <h1 class="headline">Run your app/server in the background with screen!</h1>
+            <div class="meta">
+                <span class="author">by <span class="author-name">Amit Biswas</span></span>
+                <span class="pub-date">Posted Apr. 18, 2017</span>
+            </div>
+        </header>
+        <p>Before you start, make sure you know how to SSH to the server. Learn about that <a href="ssh.html">here</a>.</p>
+        <div>
+            <label for="disclaimer">VPN Disclaimer</label>
+            <input type="checkbox" checked="true" name="one" id="disclaimer">
+            <div class="hide">
+                <note>If you are home (read: not connected to NYU wifi) you have to use <a target="_blank" href="http://www.nyu.edu/life/information-technology/getting-started/network-and-connectivity/vpn.html">NYU VPN</a>). Scroll down the page to see the download link for the vpn client for your platform (Windows, Mac etc.). When the vpn client asks for the server address use vpn.nyu.edu and use your typical netid and password to authenticate.</note>
+            </div>
+        </div>
+        <p>So you have built your server side app in your language of choice. And you have configured it to bind to an available open port on the server. Now how do you keep it running in the background, so that it doesn't get killed when you close your ssh session or your network gets disconnected?</p>
+        <p><note>Solutions I will talk about here are not meant for production.</note> But for development (ie. constantly starting and stopping application to test new code) is this perfect.</p>
+        <h2>Nohup</h2>
+        <p>Nohup deserves a mention because it is extremely simple to use and can turn any bash command into a daemon. It even writes outputs from commands to a file.</p>
+        <p><code>nohup shell-command &</code></p>
+        <p>Lets see an example:</p>
+        <p></p>
+        <p>Source: <a href="http://linux.101hacks.com/unix/nohup-command/">Nohup Linux 101 Hacks</a></p>
+        <h2>Screen</h2>
+        <p></p>
+    </article>
+</body>
+</html>
